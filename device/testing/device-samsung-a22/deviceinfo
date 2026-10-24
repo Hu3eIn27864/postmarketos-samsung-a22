@@ -1,0 +1,15 @@
+# https://postmarketos.org/deviceinfo
+# Experimental metadata only. Boot and flashing settings are intentionally
+# omitted until the exact SM-A225F boot path has been verified.
+deviceinfo_format_version="0"
+deviceinfo_name="Samsung Galaxy A22 4G"
+deviceinfo_manufacturer="Samsung"
+deviceinfo_codename="samsung-a22"
+deviceinfo_year="2021"
+deviceinfo_arch="aarch64"
+
+deviceinfo_chassis="handset"
+deviceinfo_external_storage="true"
+
+# Do not enable image generation or flashing yet.
+deviceinfo_flash_method="none"
