@@ -1,0 +1,18 @@
+# Maintainer: Hu3ein27864
+pkgname=device-samsung-a22
+pkgdesc="Experimental postmarketOS device package for Samsung Galaxy A22 4G (SM-A225F)"
+pkgver=0.1
+pkgrel=0
+url="https://github.com/Hu3eIn27864/postmarketos-samsung-a22"
+arch="aarch64"
+license="MIT"
+depends="postmarketos-base"
+source="deviceinfo"
+options="!check"
+build() {
+	:
+}
+package() {
+	install -Dm644 "$srcdir/deviceinfo" "$pkgdir/usr/share/deviceinfo/$pkgname"
+}
+sha512sums="SKIP"
