@@ -6,13 +6,14 @@ pkgrel=0
 url="https://github.com/Hu3eIn27864/postmarketos-samsung-a22"
 arch="aarch64"
 license="MIT"
-depends="postmarketos-base"
-source="deviceinfo"
+depends="devicepkg-dev"
+source="deviceinfo machine-info"
 options="!check"
 build() {
 	:
 }
 package() {
-	install -Dm644 "$srcdir/deviceinfo" "$pkgdir/usr/share/deviceinfo/$pkgname"
+	devicepkg_package
 }
-sha512sums="SKIP"
+sha512sums="SKIP
+SKIP"
