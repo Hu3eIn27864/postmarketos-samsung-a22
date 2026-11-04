@@ -2,45 +2,39 @@
 
 **Status: experimental bring-up; not boot-tested.**
 
-This repository tracks work toward a postmarketOS port for the Samsung Galaxy A22 4G, model **SM-A225F**, device codename **a22**.
+This repository tracks work toward a postmarketOS port for the Samsung Galaxy A22 4G, model **SM-A225F**, codename **a22**. “Nura” is a project name for this device-port effort, not an official postmarketOS rename.
 
-> “Nura” is the project name used here for this device-port effort. It is not an official postmarketOS project rename.
-
-## Known device details
+## Device identity
 
 - Device: Samsung Galaxy A22 4G (SM-A225F)
 - Codename: `a22`
 - SoC family: MediaTek MT6768 / MT6769
 - Architecture: ARM64 (`aarch64`)
 - Boot image: Android boot header v2, 2048-byte pages
-- Device tree compatible string observed in the stock DTB: `mediatek,MT6768`
+- Stock DTB compatible string observed: `mediatek,MT6768`
 
-## Current findings
+## Verified findings and limits
 
-- The device's stock boot image, recovery image, DTB and DTS were backed up locally before experimentation.
-- A Samsung kernel source tree for the A22 was built successfully, but its kernel version differs from the kernel extracted from the installed stock firmware.
-- A candidate boot image was assembled from the built kernel and stock ramdisk/DTB for analysis.
-- The candidate has **not** been confirmed to boot on the device. Do not treat it as a working image.
-- The bootloader's fastboot interface reported `unknown command` for `fastboot boot`; no flash was performed as part of that attempt.
+- Stock boot, recovery, DTB and DTS were backed up locally before experimentation.
+- A Samsung A22 kernel source tree was built, but its kernel version differs from the version extracted from the installed stock firmware.
+- A candidate boot image was assembled for analysis.
+- The candidate has **not** been confirmed to boot.
+- The bootloader's fastboot interface reported `unknown command` for `fastboot boot`; no flash was performed in that attempt.
+
+## Roadmap
+
+See [docs/ROADMAP.md](docs/ROADMAP.md) for staged work and conditional time estimates. The immediate priority is to establish exact firmware compatibility and a safe recovery path before attempting a boot.
 
 ## Safety
 
-Do not flash images from this repository unless you understand the recovery path and have verified the image for your exact model and firmware. The Galaxy A22 has device-specific boot-image and partition requirements. Never reuse offsets or settings from another Samsung model without verification.
-
-## Planned work
-
-- Add a proper postmarketOS device package and kernel package.
-- Document reproducible build steps and required dependencies.
-- Validate boot image layout against the exact SM-A225F firmware.
-- Test boot and hardware support before claiming functionality.
+Do not flash images unless they are verified for the exact SM-A225F model and firmware. Never reuse offsets or settings from another Samsung model. Keep known-good stock boot and recovery images offline and confirm a recovery method before any device write.
 
 ## Related kernel source
 
-The kernel source investigated so far is available at:
 https://github.com/Samsung-Helio-G80-Devs/android_kernel_samsung_a22
 
-This repository does not redistribute the full kernel source tree.
+The full kernel source tree is not redistributed here.
 
-## License
+## Licensing
 
-Licensing for device-specific files and any future patches must be documented before upstreaming. Respect the licenses of all referenced projects and firmware components.
+Document provenance and licensing for device-specific files and future patches before upstreaming. Respect all referenced projects and firmware licenses.
